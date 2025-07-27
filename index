@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wushra360 Garage Management System</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts for a professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f6fa;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #212529;
+        }
+        .navbar {
+            background: #222b38;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffd700 !important; /* Gold accent */
+        }
+        .header {
+            background: #293447;
+            padding: 40px 0;
+            color: #fff;
+            text-align: center;
+        }
+        .header h1 {
+            font-weight: bold;
+        }
+        .header p {
+            font-style: italic;
+            color: #ffd700;
+        }
+        .card {
+            box-shadow: 0 4px 16px 0 rgba(40, 40, 70, 0.07);
+            border: none;
+        }
+        .btn-primary {
+            background-color: #293447;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #224365;
+        }
+        .footer {
+            background: #222b38;
+            color: #ddd;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Wushra360</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon text-warning"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#cars">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#parts">Parts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#invoices">Invoices</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#repair-tracking">Tracking</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO -->
+    <div class="header">
+        <div class="container">
+            <h1>Wushra360</h1>
+            <p class="mb-3">Organized. Optimized. On Track</p>
+            <h5 class="fw-light">Garage Management System for the UAE</h5>
+        </div>
+    </div>
+
+    <div class="container py-5">
+
+        <!-- SECTION: CAR ENTRY & LISTING -->
+        <section id="cars" class="mb-5">
+            <div class="row mb-4">
+                <div class="col">
+                    <h3 class="mb-3"><i class="bi bi-car-front"></i> Cars In Garage</h3>
+                    <div class="card p-3">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Car Plate / VIN">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Model">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Car Owner Name">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Problem / Issue">
+                            </div>
+                            <div class="col-md-12 text-end">
+                                <button type="submit" class="btn btn-primary">Add Car</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Cars Table Example -->
+            <div class="card p-3">
+                <h5 class="mb-3">Current Cars Being Serviced</h5>
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Plate / VIN</th>
+                            <th>Model</th>
+                            <th>Owner</th>
+                            <th>Problems</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example Data Row -->
+                        <tr>
+                            <td>UAE 12345</td>
+                            <td>Toyota Land Cruiser</td>
+                            <td>Ahmed Al Mansoori</td>
+                            <td>Engine Noise, AC repair</td>
+                            <td><span class="badge bg-warning text-dark">In Progress</span></td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                <a href="#" class="btn btn-sm btn-success">Mark as Done</a>
+                            </td>
+                        </tr>
+                        <!-- More dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION: PARTS -->
+        <section id="parts" class="mb-5">
+            <div class="row mb-4">
+                <div class="col">
+                    <h3 class="mb-3"><i class="bi bi-tools"></i> Spare Parts Inventory</h3>
+                    <div class="card p-3">
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Part Name">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Part Code">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" placeholder="Stock Qty">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Price (AED)">
+                            </div>
+                            <div class="col-md-2 text-end">
+                                <button type="submit" class="btn btn-primary">Add Part</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Parts Table Example -->
+            <div class="card p-3">
+                <h5 class="mb-3">Parts List</h5>
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Part Name</th>
+                            <th>Code</th>
+                            <th>Stock</th>
+                            <th>Unit Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Brake Pads</td>
+                            <td>BRK-PAD-089</td>
+                            <td>12</td>
+                            <td>AED 80.00</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                            </td>
+                        </tr>
+                        <!-- More dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION: INVOICE MANAGEMENT -->
+        <section id="invoices" class="mb-5">
+            <div class="row mb-4">
+                <div class="col">
+                    <h3 class="mb-3"><i class="bi bi-receipt"></i> Invoice Management</h3>
+                    <div class="card p-3">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Invoice Number">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Car Plate / VIN">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" placeholder="Total (AED)">
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <button type="submit" class="btn btn-primary">Create Invoice</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Invoices Table Example -->
+            <div class="card p-3">
+                <h5 class="mb-3">Invoices</h5>
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>No.</th>
+                            <th>Car</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-1001</td>
+                            <td>UAE 12345 (Land Cruiser)</td>
+                            <td>AED 920</td>
+                            <td><span class="badge bg-success">Paid</span></td>
+                            <td>2025-07-25</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-primary">View</a>
+                            </td>
+                        </tr>
+                        <!-- More dynamic rows -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION: REPAIR TRACKING -->
+        <section id="repair-tracking" class="mb-5">
+            <div class="row mb-4">
+                <div class="col">
+                    <h3 class="mb-3"><i class="bi bi-clock-history"></i> Repaired Cars Tracker</h3>
+                    <div class="card p-3">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Plate / VIN</th>
+                                    <th>Model</th>
+                                    <th>Owner</th>
+                                    <th>Problems Fixed</th>
+                                    <th>Date Completed</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UAE 65432</td>
+                                    <td>Nissan Patrol</td>
+                                    <td>Fatima Al Rashid</td>
+                                    <td>Oil Change, AC repair</td>
+                                    <td>2025-07-25</td>
+                                    <td><span class="badge bg-info">Ready for Pickup</span></td>
+                                </tr>
+                                <!-- More dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer">
+        &copy; 2025 Wushra360 &mdash; Organized. Optimized. On Track.<br>
+        Based in United Arab Emirates
+    </div>
+    <!-- Bootstrap 5 JS CDN for collapsible nav -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons for some icons (optional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>
